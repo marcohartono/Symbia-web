@@ -1,8 +1,8 @@
 @import "tailwindcss";
 
 :root {
-  --background: #ffffff;
-  --foreground: #171717;
+  --background: #050706;
+  --foreground: #e8f3ea;
 }
 
 @theme inline {
@@ -14,8 +14,8 @@
 
 @media (prefers-color-scheme: dark) {
   :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
+    --background: #050706;
+    --foreground: #e8f3ea;
   }
 }
 
@@ -23,4 +23,87 @@ body {
   background: var(--background);
   color: var(--foreground);
   font-family: Arial, Helvetica, sans-serif;
+}
+
+.marquee-row {
+  display: flex;
+  gap: 12px;
+  width: max-content;
+}
+
+.marquee-item {
+  flex-shrink: 0;
+}
+
+@keyframes marquee-left {
+  0% {
+    transform: translateX(0);
+  }
+  100% {
+    transform: translateX(-50%);
+  }
+}
+
+@keyframes marquee-right {
+  0% {
+    transform: translateX(-50%);
+  }
+  100% {
+    transform: translateX(0);
+  }
+}
+
+.animate-marquee-left {
+  animation: marquee-left 200s linear infinite;
+}
+
+.animate-marquee-right {
+  animation: marquee-right 200s linear infinite;
+}
+
+.leather-bg {
+  position: relative;
+  background-color: #060907;
+  background-image: radial-gradient(
+      circle at 20% 20%,
+      rgba(255, 255, 255, 0.045),
+      transparent 28%
+    ),
+    radial-gradient(
+      circle at 80% 0%,
+      rgba(52, 211, 153, 0.08),
+      transparent 32%
+    ),
+    linear-gradient(135deg, rgba(255, 255, 255, 0.03), rgba(0, 0, 0, 0.3));
+}
+
+.leather-bg::before {
+  content: "";
+  position: absolute;
+  inset: -40px;
+  background-image: radial-gradient(
+    circle at 12px 12px,
+    rgba(255, 255, 255, 0.08) 0,
+    rgba(255, 255, 255, 0) 6px
+  );
+  background-size: 32px 32px;
+  opacity: 0.18;
+  mix-blend-mode: soft-light;
+  pointer-events: none;
+  filter: blur(0.2px);
+}
+
+.leather-bg::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(
+    90deg,
+    rgba(0, 0, 0, 0.45),
+    rgba(255, 255, 255, 0.05) 45%,
+    rgba(0, 0, 0, 0.45)
+  );
+  opacity: 0.4;
+  mix-blend-mode: multiply;
+  pointer-events: none;
 }

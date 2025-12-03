@@ -37,19 +37,19 @@ export default function Home() {
 
   const stories = [
     {
-      name: "Amara, materials engineer",
+      name: "Rayden, Yapper",
       quote:
-        "Symbia’s kombucha-based leather let us prototype circular fashion lines with measurable impact.",
+        "Symbia’s programs are very suitable for the people in our village because the materials needed are easily sourced, cheap, and environmentally friendly.",
     },
     {
-      name: "Jonas, supply lead",
+      name: "Rayden, Thunder God",
       quote:
-        "The traceability is the real win—every batch we ship now comes with proof of origin and carbon profile.",
+        "This leather is the first of its kind.",
     },
     {
-      name: "Rina, artisan cooperative lead",
+      name: "Lebron James, The Goat",
       quote:
-        "We turned fermentation into a new livelihood stream for our makers without adding waste to the village.",
+        "I was struck by how Rayden encouraged the workers by working alongside them.",
     },
   ];
 
@@ -61,6 +61,7 @@ export default function Home() {
         {[
           { href: "#home", label: "Home" },
           { href: "#about", label: "About" },
+          { href: "#products", label: "Products" },
           { href: "#contact", label: "Contact us" },
         ].map((link) => (
           <a
@@ -210,12 +211,12 @@ export default function Home() {
           id="stories"
           aria-label="Real stories"
         >
-          <div className="flex flex-col gap-1">
-            <h2 className="text-xl font-semibold text-emerald-50">
-              Real stories
-            </h2>
-            <p className="text-sm text-emerald-100/70">
-              Voices from the teams and makers building with Symbia.
+          <div className="flex flex-wrap items-baseline gap-3 text-left">
+            <h2 className="text-xl font-semibold text-emerald-50">Real stories</h2>
+          </div>
+          <div>
+            <p className="text-sm text-emerald-100/70" >
+              Voices from our valued customers and partners.
             </p>
           </div>
           <div className="grid gap-4 sm:grid-cols-3">
