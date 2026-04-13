@@ -1,15 +1,7 @@
-"use client";
-
 import Image from "next/image";
-import type { MouseEvent } from "react";
+import Navbar from "@/components/Navbar";
 
 export default function Home() {
-  const handleNavClick =
-    (id: string) => (event: MouseEvent<HTMLAnchorElement>) => {
-      event.preventDefault();
-      document.getElementById(id)?.scrollIntoView({ behavior: "smooth" });
-    };
-
   const processSteps = [
     {
       label: "Fermenting sheets",
@@ -57,23 +49,7 @@ export default function Home() {
     <div className="leather-bg relative min-h-screen overflow-hidden text-emerald-50">
       <div className="absolute inset-0 bg-gradient-to-b from-emerald-900/25 via-transparent to-black/70" />
 
-      <nav className="sticky top-0 z-20 flex items-center justify-center gap-8 bg-transparent px-6 pt-6 text-sm uppercase tracking-[0.12em] text-emerald-100/80 backdrop-blur">
-        {[
-          { href: "#home", label: "Home" },
-          { href: "#about", label: "About" },
-          { href: "#products", label: "Products" },
-          { href: "#contact", label: "Contact us" },
-        ].map((link) => (
-          <a
-            key={link.href}
-            className="transition hover:text-emerald-300"
-            href={link.href}
-            onClick={handleNavClick(link.href.slice(1))}
-          >
-            {link.label}
-          </a>
-        ))}
-      </nav>
+      <Navbar onHomePage />
 
       <main
         className="relative z-10 mx-auto flex min-h-screen max-w-5xl flex-col items-center justify-center gap-16 px-6 py-20 text-center"
