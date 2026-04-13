@@ -1,0 +1,168 @@
+KOMBUCHA LEATHER MAKING MANUAL
+Authoritative Knowledge Base for RAG Chatbot
+(Plain Text Ingest Document)
+
+---
+
+OVERVIEW
+
+Kombucha leather is a bio-based material grown from a SCOBY (symbiotic culture of bacteria and yeast). One notable downside of kombucha leather is that it is not hydrophobic by default. However, applying a hydrophobic treatment such as a beeswax and coconut oil coating can help address this issue.
+
+Kombucha leather is significantly cheaper to produce than animal leather and requires much less water. As the SCOBY grows over time, the resulting kombucha leather becomes thicker and stronger. While kombucha leather is not intended to replace the animal leather industry, it can be used to create creative and functional products.
+
+This document describes the complete kombucha leather making process, including preparation, fermentation, drying, and treatment. If a process or technique is not explicitly described here, it is not covered.
+
+---
+
+REQUIRED INGREDIENTS
+
+- 1 cup sugar
+- 1 SCOBY (kombucha starter)
+- 6 black tea bags (Lipton)
+- 3 liters water
+- 1 tablespoon beeswax
+- 1 tablespoon coconut oil
+
+---
+
+REQUIRED EQUIPMENT
+
+- 2 storage containers (32 qt / 59 cm x 39.1 cm x 17.8 cm)
+- Heat lamp
+- 4-quart steel pot
+- Stainless steel spoon
+- Knife
+- Paper towels
+- Large bowls
+- Brita water filter
+- Calculator
+- Food-grade scale
+- Soap
+- Vinegar
+- Towels
+- Thermometer gun
+- Oven
+- Baking mat
+- Oven-safe mug or cup
+- Dish soap
+
+---
+
+SAFETY AND HYGIENE NOTES
+
+- Always wash hands thoroughly before handling the SCOBY.
+- Clean all containers and tools before use.
+- Vinegar is used to reduce contamination risk.
+- Avoid opening containers unnecessarily during fermentation.
+- Handle the SCOBY gently to prevent tearing.
+
+---
+
+PREPARING SWEETENED BLACK TEA
+
+Boiling and Brewing
+
+1. Boil 3 liters of water under high heat with the lid on. Use a food-grade scale for precision.
+2. Add 6 black tea bags as the water boils.
+3. After 5 minutes of boiling, remove the tea bags.
+4. Add 1 cup of sugar.
+5. Stir while hot using a large stainless steel spoon until the sugar fully dissolves.
+
+Cooling and Temperature Control
+
+6. Set the pot aside in a cool area for 4 to 8 hours or longer, until the tea cools to below 30 degrees Celsius (86 degrees Fahrenheit).
+7. If tap water is used, chlorine should evaporate as the tea cools.
+8. In cold climates, place the pot near an open window or air conditioner to speed cooling.
+9. Do not open the lid during cooling to prevent dust or bacteria from entering.
+10. Use a thermometer gun to confirm the tea temperature is 30 degrees Celsius or lower before transferring.
+
+---
+
+FERMENTATION PREPARATION
+
+1. Clean the storage containers with soapy water and rinse thoroughly.
+2. Dry the containers completely using towels.
+3. Use a paper towel to apply vinegar to the inside of each container.
+4. Transfer the cooled sweetened tea into the container.
+5. Place one SCOBY into the container.
+6. Position the container in a location out of direct sunlight with adequate ventilation.
+7. Place the lid on loosely without fastening it.
+8. Cover the container with fabric or T-shirts to allow airflow while filtering dust.
+9. Turn on the heat lamp and mount it approximately 3.5 feet above the container to ensure even heat distribution.
+10. Allow the SCOBY to ferment for 3 to 4 weeks, until it grows to more than 1 inch in thickness.
+
+---
+
+HARVESTING AND DRYING
+
+Harvesting
+
+1. Wash hands thoroughly.
+2. Remove the 3 to 4 week old SCOBY and place it into a large bowl or pot near the sink.
+3. Wash the SCOBY gently with soap until no vinegar smell remains and all soap residue is removed.
+4. Wash carefully to prevent the SCOBY from ripping.
+
+Cutting and Initial Drying
+
+5. Cut the kombucha leather into desired dimensions.
+6. Observe and note differences in texture or thickness between sides.
+7. Place the cut pieces onto two baking mats.
+
+Oven Dehydration
+
+8. Dehydrate in the oven using the warm setting for approximately 14 hours at 40 to 50 degrees Celsius (104 to 122 degrees Fahrenheit).
+9. A vinegar smell during drying is normal.
+
+Final Drying
+
+10. When mostly dry, remove the kombucha leather from the oven while keeping it on the baking mat.
+11. Place the baking mat on top of the container under the heat lamp.
+12. Allow the kombucha leather to dry for several additional hours until fully dry.
+
+---
+
+WAXING TREATMENT (HYDROPHOBIC LAYER)
+
+1. Once fully dry, remove the kombucha leather from the heat lamp.
+2. Use a knife to chop approximately 1 teaspoon of beeswax into an oven-safe mug or cup.
+3. Add 1 teaspoon of coconut oil to the same cup.
+4. Microwave for 60 seconds until the mixture is fully melted and dissolved.
+5. Pour a small amount of the mixture onto a paper towel.
+6. Massage the wax and oil mixture evenly onto both sides of the kombucha leather.
+7. Blot excess oil using a clean paper towel.
+8. Set aside and allow the treated kombucha leather to dry.
+
+---
+
+MATERIAL CHARACTERISTICS AND NOTES
+
+- Kombucha leather thickness increases with longer fermentation time.
+- Material strength improves as the SCOBY grows thicker.
+- Kombucha leather is not hydrophobic without treatment.
+- Beeswax and coconut oil treatment adds water resistance.
+- Texture and thickness may vary between sides of the same piece.
+
+---
+
+KNOWN LIMITATIONS AND CONSTRAINTS
+
+- Kombucha leather is not hydrophobic by default.
+- Only beeswax and coconut oil treatment is documented.
+- No other waterproofing, coatings, or sealants are covered.
+- No guidance is provided on machine sewing.
+- No guidance is provided on industrial processing.
+- No guidance is provided on long-term durability testing.
+- No guidance is provided on load-bearing applications.
+- Results may vary due to environmental conditions.
+
+If a process, technique, material, or modification is not explicitly described in this document, it should be considered unsupported and is not covered by the documentation.
+
+---
+
+EXTERNAL REFERENCES (INFORMATIONAL ONLY)
+
+The following references informed this process but do not override this document:
+
+- growyourpantry.com/blogs/kombucha/kombucha-leather-your-guide-to-scoby-leather
+- biofabforum.org/t/manual-for-growing-bacterial-leather-kombucha/210
+- youtube.com/watch?v=Ds8ZFzOwGeI&t=119s

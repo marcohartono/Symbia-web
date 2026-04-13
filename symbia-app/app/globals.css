@@ -1,30 +1,57 @@
 @import "tailwindcss";
 
 :root {
-  --background: #050706;
-  --foreground: #e8f3ea;
+  --background: #1C1108;
+  --foreground: #FAE5D3;
 }
 
 @theme inline {
   --color-background: var(--background);
   --color-foreground: var(--foreground);
+  --color-coral: #F04E3E;
+  --color-earth: #2A2019;
+  --color-amber-warm: #E8A86D;
+  --color-blush: #F5C4A8;
+  --color-cream: #FAE5D3;
+  --color-soft: #FFF5ED;
   --font-sans: var(--font-geist-sans);
   --font-mono: var(--font-geist-mono);
-}
-
-@media (prefers-color-scheme: dark) {
-  :root {
-    --background: #050706;
-    --foreground: #e8f3ea;
-  }
+  --font-display: var(--font-playfair);
 }
 
 body {
   background: var(--background);
   color: var(--foreground);
-  font-family: Arial, Helvetica, sans-serif;
+  font-family: var(--font-geist-sans), Arial, Helvetica, sans-serif;
 }
 
+/* ── Text contrast helpers ── */
+
+/* Deep shadow on all display (serif) headings */
+.font-display {
+  text-shadow:
+    0 2px 4px rgba(0, 0, 0, 0.7),
+    0 8px 28px rgba(0, 0, 0, 0.55);
+}
+
+/* Softer shadow on body copy inside the textured background */
+.warm-bg p,
+.warm-bg span,
+.warm-bg a,
+.warm-bg li,
+.warm-bg blockquote {
+  text-shadow: 0 1px 8px rgba(0, 0, 0, 0.65);
+}
+
+/* Cards: frosted dark panel so text sits on a solid surface */
+.card-surface {
+  background: rgba(16, 8, 2, 0.70);
+  backdrop-filter: blur(14px);
+  -webkit-backdrop-filter: blur(14px);
+  border: 1px solid rgba(245, 196, 168, 0.09);
+}
+
+/* ── Marquee ── */
 .marquee-row {
   display: flex;
   gap: 12px;
@@ -36,74 +63,48 @@ body {
 }
 
 @keyframes marquee-left {
-  0% {
-    transform: translateX(0);
-  }
-  100% {
-    transform: translateX(-50%);
-  }
+  0%   { transform: translateX(0); }
+  100% { transform: translateX(-50%); }
 }
 
 @keyframes marquee-right {
-  0% {
-    transform: translateX(-50%);
-  }
-  100% {
-    transform: translateX(0);
-  }
+  0%   { transform: translateX(-50%); }
+  100% { transform: translateX(0); }
 }
 
-.animate-marquee-left {
-  animation: marquee-left 200s linear infinite;
-}
+.animate-marquee-left  { animation: marquee-left  200s linear infinite; }
+.animate-marquee-right { animation: marquee-right 200s linear infinite; }
 
-.animate-marquee-right {
-  animation: marquee-right 200s linear infinite;
-}
-
-.leather-bg {
+/* ── Leather texture background ── */
+.warm-bg {
   position: relative;
-  background-color: #060907;
-  background-image: radial-gradient(
-      circle at 20% 20%,
-      rgba(255, 255, 255, 0.045),
-      transparent 28%
-    ),
-    radial-gradient(
-      circle at 80% 0%,
-      rgba(52, 211, 153, 0.08),
-      transparent 32%
-    ),
-    linear-gradient(135deg, rgba(255, 255, 255, 0.03), rgba(0, 0, 0, 0.3));
+  background-color: #1C1108;
+  background-image: url('/landing/Leather-texture.png');
+  background-size: cover;
+  background-position: center;
+  background-attachment: fixed;
 }
 
-.leather-bg::before {
-  content: "";
-  position: absolute;
-  inset: -40px;
-  background-image: radial-gradient(
-    circle at 12px 12px,
-    rgba(255, 255, 255, 0.08) 0,
-    rgba(255, 255, 255, 0) 6px
-  );
-  background-size: 32px 32px;
-  opacity: 0.18;
-  mix-blend-mode: soft-light;
-  pointer-events: none;
-  filter: blur(0.2px);
-}
-
-.leather-bg::after {
+/* Dark overlay so text stays readable */
+.warm-bg::before {
   content: "";
   position: absolute;
   inset: 0;
-  background: linear-gradient(
-    90deg,
-    rgba(0, 0, 0, 0.45),
-    rgba(255, 255, 255, 0.05) 45%,
-    rgba(0, 0, 0, 0.45)
-  );
-  opacity: 0.4;
-  mix-blend-mode: multiply;
+  background: rgba(14, 7, 2, 0.80);
   pointer-events: none;
+  z-index: 0;
+}
+
+/* Subtle vignette on edges */
+.warm-bg::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: radial-gradient(
+    ellipse at 50% 0%,
+    transparent 40%,
+    rgba(10, 5, 2, 0.55) 100%
+  );
+  pointer-events: none;
+  z-index: 0;
 }
