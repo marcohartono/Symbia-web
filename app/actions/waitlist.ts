@@ -6,7 +6,7 @@ type WaitlistResult =
   | { success: true }
   | { success: false; error: string };
 
-export async function joinWaitlist(formData: FormData): Promise<WaitlistResult> {
+export async function joinWaitlist(_prevState: WaitlistResult, formData: FormData): Promise<WaitlistResult> {
   const email = (formData.get("email") as string | null)?.trim().toLowerCase();
   const name = (formData.get("name") as string | null)?.trim() || null;
 
