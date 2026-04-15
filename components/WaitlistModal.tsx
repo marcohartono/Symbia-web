@@ -42,18 +42,18 @@ export default function WaitlistModal() {
       />
 
       {/* Panel */}
-      <div className="relative z-10 w-full max-w-md rounded-2xl shadow-[0_32px_100px_rgba(0,0,0,0.85)] card-surface" style={{background: 'rgba(14,7,2,0.92)', backdropFilter: 'blur(20px)'}}>
+      <div className="relative z-10 w-full max-w-2xl rounded-2xl shadow-[0_32px_100px_rgba(0,0,0,0.85)] card-surface" style={{background: 'rgba(14,7,2,0.92)', backdropFilter: 'blur(20px)'}}>
         {/* Coral top accent */}
         <div className="h-px w-full rounded-t-2xl bg-gradient-to-r from-coral/80 via-amber-warm/40 to-transparent" />
 
-        <div className="p-8">
+        <div className="p-12">
           {/* Header */}
           <div className="mb-6 flex items-start justify-between gap-4">
             <div className="space-y-1">
               <p className="text-xs uppercase tracking-[0.16em] text-amber-warm/70">
                 Early access
               </p>
-              <h2 className="font-display text-3xl font-bold leading-tight text-cream">
+              <h2 className="font-display text-4xl font-bold leading-tight text-cream">
                 Join the waitlist
               </h2>
             </div>
@@ -82,12 +82,12 @@ export default function WaitlistModal() {
             </div>
           ) : (
             <>
-              <p className="mb-6 text-sm leading-relaxed text-cream/60">
+              <p className="mb-8 text-base leading-relaxed text-cream/60">
                 Be the first to know when Symbia bioleather is available — for
                 makers, brands, and craftspeople ready to work with something new.
               </p>
 
-              <form action={formAction} className="space-y-4">
+              <form action={formAction} className="space-y-5">
                 <label className="block space-y-2">
                   <span className="text-xs uppercase tracking-[0.1em] text-cream/45">
                     Name <span className="normal-case text-cream/25">(optional)</span>
