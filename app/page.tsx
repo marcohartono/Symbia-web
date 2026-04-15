@@ -9,19 +9,19 @@ export default function Home() {
     {
       step: "01",
       label: "Fermenting sheets",
-      caption: "Caption for step 1",
+      caption: "",
       src: "/process/step1.png",
     },
     {
       step: "02",
       label: "Drying and forming",
-      caption: "Caption for step 2",
+      caption: "",
       src: "/process/step2.png",
     },
     {
       step: "03",
       label: "Finishing and finish",
-      caption: "Caption for step 3",
+      caption: "",
       src: "/process/step3.png",
     },
   ];
@@ -39,16 +39,16 @@ export default function Home() {
 
   const stories = [
     {
-      name: "Rayden, Yapper",
+      name: "",
       quote:
         "Symbia's programs are very suitable for the people in our village because the materials needed are easily sourced, cheap, and environmentally friendly.",
     },
     {
-      name: "Rayden, Thunder God",
+      name: "",
       quote: "This leather is the first of its kind.",
     },
     {
-      name: "Lebron James, The Goat",
+      name: "",
       quote:
         "I was struck by how Rayden encouraged the workers by working alongside them.",
     },

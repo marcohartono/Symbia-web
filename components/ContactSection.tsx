@@ -1,33 +1,16 @@
 "use client";
 
-import { FormEvent } from "react";
+import { useActionState } from "react";
+import { submitContact, type ContactResult } from "@/app/actions/contact";
 
 type ContactSectionProps = {
   email: string;
 };
 
+const initialState: ContactResult = { success: false, error: "" };
+
 export default function ContactSection({ email }: ContactSectionProps) {
-  const handleSubmit = (event: FormEvent<HTMLFormElement>) => {
-    event.preventDefault();
-    const formData = new FormData(event.currentTarget);
-    const name = (formData.get("name") as string | null)?.trim() || "";
-    const senderEmail = (formData.get("email") as string | null)?.trim() || "";
-    const message = (formData.get("message") as string | null)?.trim() || "";
-
-    const subject = encodeURIComponent("Symbia contact inquiry");
-    const body = encodeURIComponent(
-      [
-        name && `Name: ${name}`,
-        senderEmail && `Email: ${senderEmail}`,
-        "",
-        message || "Message:",
-      ]
-        .filter(Boolean)
-        .join("\n"),
-    );
-
-    window.location.href = `mailto:${email}?subject=${subject}&body=${body}`;
-  };
+  const [state, formAction, isPending] = useActionState(submitContact, initialState);
 
   return (
     <section
@@ -57,54 +40,68 @@ export default function ContactSection({ email }: ContactSectionProps) {
       </div>
 
       <div className="card-surface rounded-2xl p-7">
-        <form
-          onSubmit={handleSubmit}
-          className="grid gap-5 md:grid-cols-2"
-          autoComplete="off"
-        >
-          <label className="space-y-2">
-            <span className="text-xs uppercase tracking-[0.1em] text-cream/40">Your name</span>
-            <input
-              className="w-full rounded-xl border border-blush/10 bg-black/20 px-4 py-3 text-sm text-cream outline-none transition placeholder:text-cream/20 focus:border-coral/40 focus:bg-black/10"
-              name="name"
-              type="text"
-              placeholder="Rayden Yap"
-            />
-          </label>
-
-          <label className="space-y-2">
-            <span className="text-xs uppercase tracking-[0.1em] text-cream/40">Email</span>
-            <input
-              className="w-full rounded-xl border border-blush/10 bg-black/20 px-4 py-3 text-sm text-cream outline-none transition placeholder:text-cream/20 focus:border-coral/40 focus:bg-black/10"
-              name="email"
-              type="email"
-              placeholder="you@example.com"
-            />
-          </label>
-
-          <label className="md:col-span-2 space-y-2">
-            <span className="text-xs uppercase tracking-[0.1em] text-cream/40">How can we help?</span>
-            <textarea
-              className="min-h-[120px] w-full rounded-xl border border-blush/10 bg-black/20 px-4 py-3 text-sm text-cream outline-none transition placeholder:text-cream/20 focus:border-coral/40 focus:bg-black/10"
-              name="message"
-              placeholder="Tell us about your product, collaboration, or event."
-              required
-            />
-          </label>
-
-          <div className="md:col-span-2 flex flex-wrap items-center justify-between gap-4">
-            <p className="text-xs text-cream/30">
-              Submitting opens your email client with the details pre-filled.
+        {state.success ? (
+          <div className="flex flex-col items-start gap-3 py-4">
+            <span className="font-display text-5xl text-coral" aria-hidden>✓</span>
+            <p className="font-display text-2xl font-bold text-cream">Message sent.</p>
+            <p className="text-sm leading-relaxed text-cream/60">
+              Thanks for reaching out — we&apos;ll get back to you soon.
             </p>
-            <button
-              type="submit"
-              className="inline-flex items-center gap-2 rounded-full bg-coral px-6 py-3 text-xs font-semibold uppercase tracking-[0.12em] text-soft transition hover:bg-amber-warm"
-            >
-              Send message
-              <span aria-hidden>↗</span>
-            </button>
           </div>
-        </form>
+        ) : (
+          <form
+            action={formAction}
+            className="grid gap-5 md:grid-cols-2"
+            autoComplete="off"
+          >
+            <label className="space-y-2">
+              <span className="text-xs uppercase tracking-[0.1em] text-cream/40">Your name</span>
+              <input
+                className="w-full rounded-xl border border-blush/10 bg-black/20 px-4 py-3 text-sm text-cream outline-none transition placeholder:text-cream/20 focus:border-coral/40 focus:bg-black/10"
+                name="name"
+                type="text"
+                placeholder="Rayden Yap"
+              />
+            </label>
+
+            <label className="space-y-2">
+              <span className="text-xs uppercase tracking-[0.1em] text-cream/40">Email</span>
+              <input
+                className="w-full rounded-xl border border-blush/10 bg-black/20 px-4 py-3 text-sm text-cream outline-none transition placeholder:text-cream/20 focus:border-coral/40 focus:bg-black/10"
+                name="email"
+                type="email"
+                placeholder="you@example.com"
+                required
+              />
+            </label>
+
+            <label className="md:col-span-2 space-y-2">
+              <span className="text-xs uppercase tracking-[0.1em] text-cream/40">How can we help?</span>
+              <textarea
+                className="min-h-[120px] w-full rounded-xl border border-blush/10 bg-black/20 px-4 py-3 text-sm text-cream outline-none transition placeholder:text-cream/20 focus:border-coral/40 focus:bg-black/10"
+                name="message"
+                placeholder="Tell us about your product, collaboration, or event."
+                required
+              />
+            </label>
+
+            <div className="md:col-span-2 flex flex-wrap items-center justify-between gap-4">
+              {"error" in state && state.error ? (
+                <p className="text-xs text-coral/80">{state.error}</p>
+              ) : (
+                <span />
+              )}
+              <button
+                type="submit"
+                disabled={isPending}
+                className="inline-flex items-center gap-2 rounded-full bg-coral px-6 py-3 text-xs font-semibold uppercase tracking-[0.12em] text-soft transition hover:bg-amber-warm disabled:opacity-50"
+              >
+                {isPending ? "Sending..." : "Send message"}
+                {!isPending && <span aria-hidden>↗</span>}
+              </button>
+            </div>
+          </form>
+        )}
       </div>
     </section>
   );
